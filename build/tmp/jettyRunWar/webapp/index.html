@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animal Kingdom</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+</head>
+<body>
+	<div>
+		<a href="#">All Animals</a>
+		<a href="create.html">New Animal</a>
+  		<form class="navbar-form navbar-left">
+			<div class="form-group">
+      			<input type="text" class="form-control" placeholder="Search">
+    		</div>
+  		</form>
+	</div>
+
+	<table class="all-animals table">
+		<tr>
+			<th>Species</th>
+			<th>Number of legs</th>
+			<th>Color</th>
+			<th>Age</th>
+		</tr>
+	</table>
+	<div class="pagination"></div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="jquery.twbsPagination.min.js"></script>
+	<script src="animals-service.js" charset="utf-8"></script>
+	<script type="text/javascript" src="list-animals.js"></script>
+	<script type="text/javascript" src="create-animal.js"></script>
+</body>
+</html>
