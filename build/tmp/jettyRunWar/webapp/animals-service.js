@@ -1,14 +1,40 @@
 var animalsService = (function() {
     'use strict';
     var baseUrl = 'http://localhost:8081/rst/';
-    function getAnimalPage(page) {
+    function getAnimalPage(page, species, numberOfLegs, color, age) {
+        return new Promise(function(resolve, reject) {
+            var queryUrl = 'api/animals?page=' + page;
+
+            if (species) {
+                queryUrl += '&species=' + species;
+            }
+
+            if (numberOfLegs) {
+                queryUrl += '&numberOfLegs=' + numberOfLegs;
+            }
+
+            if (color) {
+                queryUrl += '&color=' + color;
+            }
+
+            if (age) {
+                queryUrl += '&age=' + age;
+            }
+
+            $.get({
+                url: baseUrl + queryUrl,
+                dataType: "json",
+                success: resolve
+            });
+        });
+    }
+
+    function getSpeciesNames() {
         return new Promise(function(resolve, reject) {
             $.get({
-                url: baseUrl + 'api/animals?page=' + page,
+                url: baseUrl + "api/animals/species",
                 dataType: "json",
-                success: function(data){
-                    resolve(data);
-                }
+                success: resolve
             });
         });
     }
@@ -31,6 +57,7 @@ var animalsService = (function() {
 
     return {
         getAnimalPage: getAnimalPage,
+        getSpeciesNames: getSpeciesNames,
         createAnimal: createAnimal
     };
 }());

@@ -3,6 +3,7 @@
 <head>
 	<title>Animal Kingdom</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
 	<div>
@@ -10,7 +11,16 @@
 		<a href="create.html">New Animal</a>
   		<form class="navbar-form navbar-left">
 			<div class="form-group">
-      			<input type="text" class="form-control" placeholder="Search">
+      			<input type="text" class="form-control species-search" placeholder="Filter by species">
+    		</div>
+			<div class="form-group">
+      			<input type="text" class="form-control numberOfLegs-search" placeholder="Filter by numberOfLegs">
+    		</div>
+			<div class="form-group">
+      			<input type="text" class="form-control color-search" placeholder="Filter by color">
+    		</div>
+			<div class="form-group">
+      			<input type="text" class="form-control age-search" placeholder="Filter by age">
     		</div>
   		</form>
 	</div>
@@ -26,6 +36,7 @@
 	<div class="pagination"></div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="jquery.twbsPagination.min.js"></script>
 	<script src="animals-service.js" charset="utf-8"></script>
 	<script type="text/javascript" src="list-animals.js"></script>
